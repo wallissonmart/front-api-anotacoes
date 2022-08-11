@@ -37,7 +37,7 @@ Para rodar em sua máquina, siga os seguintes passos:
 - [MongoDB](https://www.mongodb.com/docs/manual/core/document/)
 - [React](https://pt-br.reactjs.org/docs/getting-started.html)
 - [Styled Components](https://styled-components.com/docs)
-- [Vite](https://vitejs.dev/guide/)r
+- [Vite](https://vitejs.dev/guide/)
 
 <h1 align="left" id="autor">✍️ Autor</h1>
 <a href="https://github.com/wallissonmart">
