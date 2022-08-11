@@ -17,10 +17,10 @@
 
 <h1 align="left" id="acessar">👆 Como acessar</h1>
 
-Para acessar a aplicação basta clicar no seguinte link: https://wallissonmart.github.io/
+Para acessar a aplicação basta clicar no seguinte link: https://wallissonmart.github.io/front-api-anotacoes/
 
 Para rodar em sua máquina, siga os seguintes passos:
-- git clone 
+- git clone https://github.com/wallissonmart/front-api-anotacoes.git
 - npm install
 - npm run dev
 
