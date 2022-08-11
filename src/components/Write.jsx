@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import api from '../services/api';
-import Notes from './Notes';
 
 const Write = () => {
   const [title, setTtitles] = useState('');
