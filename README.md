@@ -20,6 +20,7 @@
 Para acessar a aplicação basta clicar no seguinte link: https://wallissonmart.github.io/front-api-anotacoes/
 
 Para rodar em sua máquina, siga os seguintes passos:
+
 - git clone https://github.com/wallissonmart/front-api-anotacoes.git
 - npm install
 - npm run dev
@@ -36,7 +37,7 @@ Para rodar em sua máquina, siga os seguintes passos:
 - [MongoDB](https://www.mongodb.com/docs/manual/core/document/)
 - [React](https://pt-br.reactjs.org/docs/getting-started.html)
 - [Styled Components](https://styled-components.com/docs)
-- [Vite](https://vitejs.dev/guide/)
+- [Vite](https://vitejs.dev/guide/)r
 
 <h1 align="left" id="autor">✍️ Autor</h1>
 <a href="https://github.com/wallissonmart">
@@ -46,6 +47,5 @@ Para rodar em sua máquina, siga os seguintes passos:
 <br/>
 Entre em contato:
 
-[![Linkedin Badge](https://img.shields.io/badge/-Wallisson-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/wallisson-martins-/)](https://www.linkedin.com/in/wallisson-martins-/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Wallisson-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/wallisson-martins-/)](https://www.linkedin.com/in/wallisson-martins-/)
 [![Gmail Badge](https://img.shields.io/badge/-wallissonmartins37@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:wallissonmartins37@gmail.com)](mailto:wallissonmartins37@gmail.com)
-
