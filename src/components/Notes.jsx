@@ -130,7 +130,7 @@ const Notes = () => {
         </ul>
       ) : (
         <div className="loading">
-          <span>Calma aí fera, tá carregando...</span>
+          <span>Carregando...</span>
         </div>
       )}
     </Container>
@@ -165,8 +165,9 @@ const Container = styled.main`
     margin-top: 3rem;
   }
   .loading span {
-    color: #161515;
-    font-size: 1.6rem;
+    color: #f5f1f1;
+    font-weight: 700;
+    font-size: 1.2rem;
     text-align: center;
   }
 
@@ -288,6 +289,6 @@ const Radio = styled.div`
     margin-left: 0.1rem;
     font-weight: 700;
     color: #111010;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
