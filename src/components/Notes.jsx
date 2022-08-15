@@ -6,6 +6,7 @@ const Notes = () => {
   const [selectedValue, setSelectedValue] = useState('false');
   const [allNotes, setAllNotes] = useState([]);
   const [changeNote, setChangeNote] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (selectedValue === 'false') {
@@ -17,6 +18,7 @@ const Notes = () => {
     const response = await api.get('/annotations');
 
     setAllNotes(response.data);
+    setLoading(true);
   }
 
   async function handleDelete(id) {
@@ -100,30 +102,37 @@ const Notes = () => {
           <span>Prioridades</span>
         </div>
       </Radio>
-      <ul>
-        {allNotes.map((note) => {
-          return (
-            <li
-              key={note._id}
-              className={
-                note.priority ? 'notepad-infos-priority' : 'notepad-infos'
-              }
-            >
-              <div>
-                <strong>{note.title}</strong>
-                <div onClick={() => handleDelete(note._id)}>x</div>
-              </div>
-              <textarea
-                defaultValue={note.notes}
-                onClick={(e) => handleEdit(e.target, note.priority)}
-                onChange={(e) => setChangeNote(e.target.value)}
-                onBlur={(e) => handleSave(note, e.target, note.notes)}
-              ></textarea>
-              <span onClick={() => handleChangePriority(note._id)}>!</span>
-            </li>
-          );
-        })}
-      </ul>
+
+      {loading ? (
+        <ul>
+          {allNotes.map((note) => {
+            return (
+              <li
+                key={note._id}
+                className={
+                  note.priority ? 'notepad-infos-priority' : 'notepad-infos'
+                }
+              >
+                <div>
+                  <strong>{note.title}</strong>
+                  <div onClick={() => handleDelete(note._id)}>x</div>
+                </div>
+                <textarea
+                  defaultValue={note.notes}
+                  onClick={(e) => handleEdit(e.target, note.priority)}
+                  onChange={(e) => setChangeNote(e.target.value)}
+                  onBlur={(e) => handleSave(note, e.target, note.notes)}
+                ></textarea>
+                <span onClick={() => handleChangePriority(note._id)}>!</span>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className="loading">
+          <span>Calma aí fera, tá carregando...</span>
+        </div>
+      )}
     </Container>
   );
 };
@@ -147,6 +156,18 @@ const Container = styled.main`
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .loading span {
+    color: #161515;
+    font-size: 1.6rem;
+    text-align: center;
   }
 
   .notepad-infos div {
