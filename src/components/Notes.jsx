@@ -12,7 +12,7 @@ const Notes = () => {
     if (selectedValue === 'false') {
       getAllNotes();
     }
-  }, [allNotes]);
+  }, []);
 
   async function getAllNotes() {
     const response = await api.get('/annotations');
