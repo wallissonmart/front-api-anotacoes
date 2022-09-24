@@ -34,6 +34,7 @@ const Write = () => {
 
     enableSubmitButton();
   }, [title, notes]);
+
   return (
     <Aside>
       <strong>Caderno de notas</strong>

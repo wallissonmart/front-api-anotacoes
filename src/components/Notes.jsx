@@ -12,7 +12,7 @@ const Notes = () => {
     if (selectedValue === 'false') {
       getAllNotes();
     }
-  }, []);
+  }, []); 
 
   async function getAllNotes() {
     const response = await api.get('/annotations');
@@ -39,6 +39,7 @@ const Notes = () => {
       e.style.boxShadow = '0 0 5px gray';
     }
   }
+
   async function handleChangePriority(id) {
     const note = await api.post(`/priorities/${id}`);
     if (note && selectedValue === 'true') {
@@ -47,6 +48,7 @@ const Notes = () => {
       getAllNotesPriority();
     }
   }
+
   async function handleSave(note, e, notes) {
     e.style.cursor = 'default';
     e.style.boxShadow = 'none';
@@ -102,7 +104,6 @@ const Notes = () => {
           <span>Prioridades</span>
         </div>
       </Radio>
-
       {loading ? (
         <ul>
           {allNotes.map((note) => {
