@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import api from '../services/api';
+import { AuthContext } from '../context/UseContext';
 
 const Notes = () => {
   const [selectedValue, setSelectedValue] = useState('false');
@@ -8,11 +9,14 @@ const Notes = () => {
   const [changeNote, setChangeNote] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const auth = useContext(AuthContext);
+
   useEffect(() => {
     if (selectedValue === 'false') {
       getAllNotes();
-    }
-  }, []); 
+    } 
+
+  }, [auth.updateNotes]);
 
   async function getAllNotes() {
     const response = await api.get('/annotations');

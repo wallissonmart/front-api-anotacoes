@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { AuthContext } from '../context/UseContext';
 import api from '../services/api';
 
 const Write = () => {
   const [title, setTtitles] = useState('');
   const [notes, setNotes] = useState('');
   const [priority, setPriority] = useState(false);
+
+  const auth = useContext(AuthContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +24,7 @@ const Write = () => {
     setTtitles('');
     setNotes('');
     setPriority(false);
+    auth.setUpdateNotes(!auth.updateNotes);
   }
 
   useEffect(() => {

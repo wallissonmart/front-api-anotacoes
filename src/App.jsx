@@ -3,13 +3,16 @@ import styled from 'styled-components';
 import './App.css';
 import Notes from './components/Notes';
 import Write from './components/Write';
+import {AuthProvider} from './context/UseContext';
 
 function App() {
   return (
-    <Container>
-      <Write />
-      <Notes />
-    </Container>
+    <AuthProvider>
+      <Container>
+        <Write />
+        <Notes />
+      </Container>
+    </AuthProvider>
   );
 }
 
