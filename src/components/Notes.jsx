@@ -20,7 +20,7 @@ const Notes = () => {
 
   async function getAllNotes() {
     const response = await api.get('/annotations');
-
+console.log(response)
     setAllNotes(response.data);
     setLoading(true);
   }
