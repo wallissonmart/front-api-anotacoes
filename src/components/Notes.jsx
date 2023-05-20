@@ -8,21 +8,27 @@ const Notes = () => {
   const [allNotes, setAllNotes] = useState([]);
   const [changeNote, setChangeNote] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const auth = useContext(AuthContext);
 
   useEffect(() => {
     if (selectedValue === 'false') {
       getAllNotes();
-    } 
-
+    }
   }, [auth.updateNotes]);
 
   async function getAllNotes() {
-    const response = await api.get('/annotations');
-console.log(response)
-    setAllNotes(response.data);
-    setLoading(true);
+    await api
+      .get('/annotations')
+      .then(() => {
+        console.log(response);
+        setAllNotes(response.data);
+        setLoading(true);
+      })
+      .catch(() => {
+        setError(true);
+      });
   }
 
   async function handleDelete(id) {
@@ -133,9 +139,13 @@ console.log(response)
             );
           })}
         </ul>
-      ) : (
+      ) : !error ? (
         <div className="loading">
           <span>Carregando...</span>
+        </div>
+      ) : (
+        <div className="loading">
+          <span>Ocorreu um erro. Tente novamente mais tarde.</span>
         </div>
       )}
     </Container>
